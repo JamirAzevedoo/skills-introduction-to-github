@@ -1,0 +1,61 @@
+include <stdio.h>
+}
+
+// Bispo com recursão e loop aninhado
+void movimentoBispoRecursivo(int casas) {
+    if (casas <= 0) return;
+    for (int i = 0; i < 1; i++) {
+        printf("Cima, Direita\n");
+    }
+    movimentoBispoRecursivo(casas - 1);
+}
+
+// Rainha recursiva
+void movimentoRainhaRecursivo(int casas) {
+    if (casas <= 0) return;
+    printf("Esquerda\n");
+    movimentoRainhaRecursivo(casas - 1);
+}
+
+// Cavalo com loop complexo
+void movimentoCavaloComplexo() {
+    printf("=== Movimento do Cavalo Complexo ===\n");
+    for (int i = 0, j = 2; i < 2 || j > 0; i++, j--) {
+        if (i < 2) {
+            printf("Cima\n");
+            continue;
+        }
+        if (j == 1) {
+            printf("Direita\n");
+        }
+    }
+    printf("\n");
+}
+
+// Função principal
+int main() {
+    // Nível Novato
+    movimentoTorre();
+    movimentoBispo();
+    movimentoRainha();
+
+    // Nível Aventureiro
+    movimentoCavalo();
+
+    // Nível Mestre
+    printf("=== Movimento Torre Recursivo ===\n");
+    movimentoTorreRecursivo(5);
+    printf("\n");
+
+    printf("=== Movimento Bispo Recursivo ===\n");
+    movimentoBispoRecursivo(5);
+    printf("\n");
+
+    printf("=== Movimento Rainha Recursivo ===\n");
+    movimentoRainhaRecursivo(8);
+    printf("\n");
+
+    movimentoCavaloComplexo();
+
+    return 0;
+}
